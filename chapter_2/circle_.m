@@ -4,4 +4,4 @@ function alpha_ = circle_(a, x, y, t)
   x(t) = a * cos(t);
   y(t) = a * sin(t);
   alpha_ = [x(t); y(t)];
-endfunction
+end

@@ -50,36 +50,87 @@ f2 = figure;
 
 %_circle_ = circle_(2, x(t), y(t), t);
 % Circle - plot from page 26
-_circle_ = [];
 _circle(t) = circle_(2, x, y, t);
-for i = 1 : GRAPH_RESOLUTION
-  temporary = _circle(t_(i));
-  _circle_ = [_circle_; [double(temporary(1)), double(temporary(2))]];
-end
+_circle_ = ParametricPlot(GRAPH_RESOLUTION, _circle(t), t, t_);
 subplot(2, 2, 1);
 plot(_circle_(:, 1), _circle_(:, 2));
 title('Circle of radius 2');
+axis equal;
 
-% Plot untitled figure from page 27
-_circle_1_ = [];
 _circle_1(t) = circle_(2, x, y, t);
-for i = 1 : GRAPH_RESOLUTION
-  temporary = _circle_1(t_(i));
-  _circle_1_ = [_circle_1_; [double(temporary(1)), double(temporary(2))]];
-end
+_circle_1_ = ParametricPlot(GRAPH_RESOLUTION, _circle_1(t), t, t_);
 _circle_1_(:, 1) = _circle_1_(:, 1) + 1;
 _circle_1_(:, 2) = _circle_1_(:, 2) + 2;
-_circle_2_ = [];
+
 _circle_2(t) = circle_(3, x, y, t);
-for i = 1 : GRAPH_RESOLUTION
-  temporary = _circle_2(t_(i));
-  _circle_2_ = [_circle_2_; [double(temporary(1)), double(temporary(2))]];
-end
+_circle_2_ = ParametricPlot(GRAPH_RESOLUTION, _circle_2(t), t, t_);
 _circle_2_(:, 1) = _circle_2_(:, 1) + 2;
 _circle_2_(:, 2) = _circle_2_(:, 2) + 0;
+
 subplot(2, 2, 2);
 plot(_circle_1_(:, 1), _circle_1_(:, 2), _circle_2_(:, 1), _circle_2_(:, 2));
+axis equal;
 
+% Ellipse - plot from page 28
+_ellipse(t) = ellipse_(2, 1, x, y, t);
+_ellipse_ = ParametricPlot(GRAPH_RESOLUTION, _ellipse(t), t, t_);
+subplot(2, 2, 4);
+plot(_ellipse_(:, 1), _ellipse_(:, 2));
+title('The ellipse x^2/4 + y^2 = 1');
+axis equal;
+
+kappa2_ellipse(t) = kappa2(_ellipse(t));
+kappa2_ellipse_ = [];
+for i = 1 : GRAPH_RESOLUTION
+  kappa2_ellipse_ = [kappa2_ellipse_; double(kappa2_ellipse(t_(i)))];  
+end
+subplot(2, 2, 3);
+plot(t_, kappa2_ellipse_);
+title('Curvature of the ellipse x^2/4+y^2=1');
+
+t_ = linspace(0, 12 * pi, GRAPH_RESOLUTION);
+
+f3 = figure;
+
+_logspiral(t) = logspiral(1, 0.08, x, y, t);
+logspiral_ = ParametricPlot(GRAPH_RESOLUTION, _logspiral(t), t, t_);
+subplot(2, 2, 1);
+plot(logspiral_(:, 1), logspiral_(:, 2));
+title('The logarithmic spiral');
+axis equal;
+
+kappa2_logspiral(t) = kappa2(_logspiral(t));
+kappa2_logspiral_ = [];
+for i = 1 : GRAPH_RESOLUTION
+  kappa2_logspiral_ = [kappa2_logspiral_; double(kappa2_logspiral(t_(i)))];  
+end
+subplot(2, 2, 2);
+plot(t_, kappa2_logspiral_);
+title('Curvature of the logarithmic spiral');
+
+t_ = linspace(0.1, 2 * pi + 0.1, GRAPH_RESOLUTION);
+
+subplot(2, 2, 3);
+for n = 1 : 8
+  _diamond_1(t) = diamond(n, 1, 1, x, y, t);
+  diamond_1 = ParametricPlot(GRAPH_RESOLUTION, _diamond_1(t), t, t_);
+  plot(diamond_1(:, 1), diamond_1(:, 2));
+  hold on;
+end
+title('Diamond (n, 1, 1)');
+axis equal;
+hold off;
+
+subplot(2, 2, 4);
+for n = 1 : 8
+  _diamond_2(t) = diamond(1/n, 1, 3/2, x, y, t);
+  diamond_2 = ParametricPlot(GRAPH_RESOLUTION, _diamond_2(t), t, t_);
+  plot(diamond_2(:, 1), diamond_2(:, 2));
+  hold on;
+end
+title('Diamond (1/n, 1, 1.5)');
+axis equal;
+hold off;
 
 if (DISABLE_WARNINGS)
   warning('on', 'all');
