@@ -8,3 +8,7 @@ Alfred Gray wrote <i>Modern Differential Geometry of Curves and Surfaces</i> as 
 I have ready access to the (First Edition)[https://smile.amazon.com/Differential-Geometry-Surfaces-Textbooks-Mathematics/dp/0849378729/] which I will attempt to finish first. However, I will attempt to update to the (Third Edition)[https://smile.amazon.com/Differential-Geometry-Mathematica-Textbooks-Mathematics/dp/1584884487/] if I can finish the first edition and justify spending 100 dollars to buy the new edition. I view this repository as a gateway to other mathematical repositories. I definitely plan to do partial differential equations in the future. And perhaps I will make a repository for complex analysis after that.
 
 If you have any questions, comments, suggestions, or concerns, you can email me at pervigilent@gmail.com. I hope to integrate this repository with an artificial intelligence and computational biology organization which I will link to on this site and www.pervigilent.com in the future.
+
+## Documentation
+
+There is an accompanying LaTeX manual in the repository. This document organizes the code which is in the repository and presents it succinctly. 
