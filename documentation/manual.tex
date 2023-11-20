@@ -38,6 +38,61 @@
 			\end{aligned}
 			\right.
 		\end{equation*}
-		with constants of integration $c_0, d_0, \theta_0$.		
+		with constants of integration $c_0, d_0, \theta_0$.
+		
+	\chapter{Space Curves}
+		This chapter highlights space curves.
+		
+		Let $\gamma:(a,b)\rightarrow\mathbb{R}^n$ be an arc length parametrization of a curve. (We can say that an arc length parametrization of a curve is the same as a unit speed curve?) Then the unit tangent vector $\mathbf{T}$ (called the unit tangent vector field in the text) is given by
+		\begin{equation}
+			\mathbf{T}(s)=\gamma'(s),\quad s\in(a,b)\mathrm{.}
+		\end{equation}
+		
+		The curvature is the magnitude of the acceleration
+		\begin{align}
+			\kappa(s)&=\|\mathbf{T}'(s)\|\\
+			&=\|\gamma''(s)\|
+		\end{align}
+		which is consistent with the definition in the previous chapter.
+		
+		The unit normal vector $\mathbf{N}$ is given by 
+		\begin{align}
+			\mathbf{N}&=\frac{\mathbf{T}'}{\kappa}\\
+			&=\frac{\mathbf{T}'}{\|\mathbf{T}'(s)\|}
+		\end{align}
+		and is called the principal normal vector field in the text.
+		
+		The Frenet binormal vector is given by
+		\begin{equation}
+			\mathbf{B}(s)=\mathbf{T}(s)\times\mathbf{N}(s)
+		\end{equation}
+		and is called the binormal vector field in the text.
+		
+		The Frenet-Serret frame is ${\mathbf{T},\mathbf{N},\mathbf{B}}$. It is called the Frenet frame field in the text.
+		
+		We define the torsion $\tau$ as the speed of rotation of the binormal vector at a given point. The formula for the torsion is then
+		\begin{equation}
+			\mathbf{B}'=-\tau\mathbf{N}\mathrm{.}
+		\end{equation}
+		This gives $\tau=-\mathbf{N}\cdot\mathbf{B}'$.
+		
+		The Frenet-Serret formulas are given by
+		\begin{equation}
+			\begin{bmatrix}
+				\mathbf{T}'\\
+				\mathbf{N}'\\
+				\mathbf{B}'
+			\end{bmatrix}=
+			\begin{bmatrix}
+				0 & \kappa & 0\\
+				-\kappa & 0 & \tau\\
+				0 & -\tau & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				\mathbf{T}\\
+				\mathbf{N}\\
+				\mathbf{B}
+			\end{bmatrix}\mathrm{.}
+		\end{equation}
 
 \end{document}
