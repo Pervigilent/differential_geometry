@@ -1,5 +1,6 @@
 \documentclass{book}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -9,5 +10,34 @@
 		\begin{equation}
 			J(x,y)=(-x,y)\mathrm{.}
 		\end{equation} 
+		
+		Let $f:(a,b)\rightarrow\mathbb{R}^2$ be a curve. Assume that $f$ is defined on a larger interval containing $a$ and $b$. The \textbf{length} of $f$ is given by
+		\begin{equation}
+			L(f)=\int^a_b{\|f'(t)\|\,dt}\mathrm{.}
+		\end{equation}
+		
+		Let $f:(a,b)\rightarrow\mathbb{R}^2$ be a regular curve, and suppose further that $f$ is given by the parameterization $f(t)=(x(t),y(t))$. The (unsigned) curvature is given by
+		\begin{align}
+			\kappa(t)&=\frac{f''(t)\cdot Jf'(t)}{\|f'(t)\|^3}\\
+			&=\frac{x'y''-y'x''}{(x'^2+y'^2)^{3/2}}\mathrm{.}
+		\end{align}
+		
+	\chapter{Curvature}
+		This chapter describes curves in terms of their curvature.
+	
+		\textbf{Theorem} The absolute value of the curvature and the derivative of arc length of a curve are invariant under Euclidean motions of $\mathbb{R}^2$. The curvature $\kappa$ is preserved by an orientation preserving Euclidean motion of $\mathbb{R}^2$ and changes sign under an orientation reversing Euclidean motion.
+		
+		\textbf{Theorem} Let $f$ and $g$ be regular curves in $\mathbb{R}^2$ defined on the same interval $(a,b)$. Assume that $f$ and $g$ have the same signed curvature. Then there is an orientation preserving Euclidean motion $E$ of $\mathbb{R}^2$ mapping $f$ into $g$.
+		
+		\textbf{Theorem} Let $f:(a,b)\rightarrow\mathbb{R}^2$ be a unit speed curve whose curvature is $k:(a,b)\rightarrow\mathbb{R}$. The curve is given by
+		\begin{equation*}
+			\left\{
+			\begin{aligned}
+				f(s)&=\left(\int\cos{\theta(s)\,ds}+c_0,\int\sin{\theta(s)\,ds+d_0}\right),\\
+				\theta(s)&=\int{k(s)\,ds}+\theta_0,
+			\end{aligned}
+			\right.
+		\end{equation*}
+		with constants of integration $c_0, d_0, \theta_0$.		
 
 \end{document}
