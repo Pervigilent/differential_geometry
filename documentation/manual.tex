@@ -94,5 +94,31 @@
 				\mathbf{B}
 			\end{bmatrix}\mathrm{.}
 		\end{equation}
+		
+	\chapter{Calculus}
+%		Given a vector $v$ in $\mathbb{R}^n$, the directional derivative at a point $x\in\mathbb{R}^n$ is given by
+%		\begin{align}
+%			(D_vf)(x)&\equiv\left.\frac{\mathrm{d}}{\mathrm{d}t}[f(x+tv)]\right\rvert_{t=0}&\\
+%			&=\sum_{i=1}^{n}{v^i\frac{\partial f}{\partial x^i}(x)},&\forall f\in C^\infty(\mathbb{R}^n)\mathrm{.}
+%		\end{align}
+		Let $f:\mathbb{R}^n\rightarrow\mathbb{R}$ be a differentiable function and let $\mathbf{v}$ be a vector in $\mathbb{R}^n$. The directional derivative in the $\mathbf{v}$ direction at point $\mathbf{x}\in\mathbb{R}^n$ is given by
+		\begin{align}
+			\nabla_\mathbf{v}f(x)&\equiv\left.\frac{d}{dt}[f(\mathbf{x}+t\mathbf{v})]\right\rvert_{t=0}\\
+			&=\sum_{i=1}^{n}{v^i\frac{\partial f}{\partial x_i}(\mathbf{x})}\mathrm{.}
+		\end{align}
+		
+	\chapter{Differentiable Manifolds}
+	
+		Let $M$ be a topological space. A \textbf{chart} comprises an open subset $U$ of $M$ and a homeomorphism $\phi$ from $U$ to an an open subset of  A differentiable manifold comprises a second countable Hausdorff space M, together with an open subset of some Euclidean space $\mathbb{R}^n$. (Recall that a homeomorphism is a bijective and continuous function between topological spaces that has a continuous inverse function. [Thus, homeomorphisms are isomorphisms of topological spaces, and two topological spaces which are homeomorphic - they share a homeomorphism - are topologically equivalent.])
+		
+		Given a topological space $M$, a smooth or analytic \textbf{atlas} comprises a collection of charts $\{\phi_a:U_a\rightarrow\mathbb{R}^n\}_{a\in A}$ such that $\{U_a\}_{a\in A}$ covers $M$, and such that for all $\alpha$ and $\beta$ in $A$, the transition map is $\phi_\alpha\circ\phi_\beta^{-1}$ is smooth or real-analytic, respectively. Similarly, a holomorphic atlas is a collection of charts $\{\phi_a:U_a\rightarrow\mathbb{C}^n\}_{a\in A}$ where the open subsets cover $M$ and the transition maps are holomorphic. We can also define a $C^k$ atlas in a similar manner.
+		
+		A \textbf{topological manifold} (or $C^0$ manifold) comprises a topological space $M$ together with a $C^0$ atlas on $M$. A \textbf{differentiable manifold} is a Hausdorff and second countable topological space $M$, together with a \emph{maximal differentiable} atlas on $M$. (Recall that a topological space is a Hausdorff space if, given any two distinct points, one can find a neighborhood for each point which is disjoint from the neighborhood of the other point.)
+		
+		Note that instead of defining a chart, Gray defines a patch. A \emph{patch} on a topological space $M$ comprises a pair $(\phi, U)$ where $U$ is an open subset of $\mathbb{R}^n$ and
+		\begin{equation}
+			\phi:U\rightarrow\phi(U)\subset M
+		\end{equation}
+		is a homeomorphism of $U$ into an open set $\phi(U)$ of $M$.
 
 \end{document}
