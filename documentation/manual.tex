@@ -107,6 +107,32 @@
 			&=\sum_{i=1}^{n}{v^i\frac{\partial f}{\partial x_i}(\mathbf{x})}\mathrm{.}
 		\end{align}
 		
+	\chapter{Surface Examples}
+	
+\begin{small}
+\begin{verbatim}
+function [x, y, z] = monkeysaddle(u, v)
+  %MONKEYSADDLE Create a parameterized monkey saddle
+  % Create a parameterized monkey saddle
+  x = u;
+  y = v;
+  z = u^3  - 3 * u * v^2;
+end		
+\end{verbatim}		
+\end{small}
+
+\begin{small}
+\begin{verbatim}
+function [x, y, z] = stereographicellipsoid(a, b, c, u, v)
+  %STEREOGRAPHICELLIPSOID Create a parameterized stereographic ellipsoid
+  % Create a parameterized stereographic ellipsoid
+  x = a * (1 - u^2 - v^2) / (1 + u^2 + v^2);
+  y = 2 * b * u / (1 + u^2 + v^2);
+  z = 2 * c * v / (1 + u^2 + v^2);
+end	
+\end{verbatim}		
+\end{small}
+		
 	\chapter{Differentiable Manifolds}
 	
 		Let $M$ be a topological space. A \textbf{chart} comprises an open subset $U$ of $M$ and a homeomorphism $\phi$ from $U$ to an an open subset of  A differentiable manifold comprises a second countable Hausdorff space M, together with an open subset of some Euclidean space $\mathbb{R}^n$. (Recall that a homeomorphism is a bijective and continuous function between topological spaces that has a continuous inverse function. [Thus, homeomorphisms are isomorphisms of topological spaces, and two topological spaces which are homeomorphic - they share a homeomorphism - are topologically equivalent.])
@@ -120,5 +146,24 @@
 			\phi:U\rightarrow\phi(U)\subset M
 		\end{equation}
 		is a homeomorphism of $U$ into an open set $\phi(U)$ of $M$.
+		
+		For a $C^k$ manifold $M$, the set of real-valued $C^k$ functions on the manifold forms an algebra under pointwise addition an multiplication, called the \textbf{algebra of scalar fields} or simply the \emph{algebra of scalars}. Gray calls this an \emph{algebra of real-valued differentiable functions} $M$ and defines it as follows
+		\begin{align}
+			\mathfrak{F}(M)&=\{f:M\rightarrow\mathbb{R}|f\in C^k\}\\
+			(af+bg)(p)&=af(p)+bg(p)\\
+			(fg)(p)&=f(p)g(p)
+		\end{align}
+		for $a,b\in\mathbb{R}$, $f,g\in\mathfrak{F}(M)$ and $p\in M$.
+		
+		A tensor can be defined as a multilnear map
+		\begin{equation}
+			T:M\times\cdots\times M\rightarrow\mathbb{R}
+		\end{equation}
+		
+		A tensor field of type $(p,q)$ is a section
+		\begin{equation}
+			T\in\Gamma(M,V^{\otimes p}\otimes(V^*)^{\otimes q})
+		\end{equation}
+		where $V$ is a vector bundle on $M$, $V*$ is its dual and $\otimes$ is the tensor product of vector bundles.
 
 \end{document}

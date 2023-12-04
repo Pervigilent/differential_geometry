@@ -10,10 +10,15 @@ fig_1 = figure()
 [x, y, z] = monkeysaddle(u, v);
 u_ = linspace(-1.5, 1.5, RESOLUTION);
 v_ = linspace(-1.5, 1.5, RESOLUTION);
-x_ = ParametricPlot3D(RESOLUTION, RESOLUTION,...
-  x, u, v, u_, v_);
-y_ = ParametricPlot3D(RESOLUTION, RESOLUTION,...
-  y, u, v, u_, v_);
-z_ = ParametricPlot3D(RESOLUTION, RESOLUTION,...
-  z, u, v, u_, v_);
+[x_, y_, z_] = SpatialParametricPlot(x, y, z,...
+  RESOLUTION, RESOLUTION, u, v, u_, v_);
 surf(x_, y_, z_);
+
+fig_2 = figure ();
+
+[x, y, z] = stereographicellipsoid(1, 3, 5, u, v);
+u_ = linspace(-2.8, 2.8, RESOLUTION);
+v_ = linspace(-2.8, 2.8, RESOLUTION);
+[x_, y_, z_] = SpatialParametricPlot(x, y, z,...
+  RESOLUTION, RESOLUTION, u, v, u_, v_);
+surf(x_, y_, z_); 
