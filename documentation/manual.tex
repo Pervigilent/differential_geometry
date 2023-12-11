@@ -1,6 +1,7 @@
 \documentclass{book}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -21,6 +22,48 @@
 			\kappa(t)&=\frac{f''(t)\cdot Jf'(t)}{\|f'(t)\|^3}\\
 			&=\frac{x'y''-y'x''}{(x'^2+y'^2)^{3/2}}\mathrm{.}
 		\end{align}
+
+	\chapter{Matlab: Studying Curves in the Plane with Mathematica}
+		Gray describes programming in Mathematica in his second chapter. This repository converts the Mathematica programming to Matlab. There are scripts named after the chapter which generate the included figures for the LaTeX file.
+		\begin{figure}
+			\centering
+			\includegraphics[width=4in]{images/fig_02_001.png}
+			\caption{This is a sample graphic}
+			\label{fig_2_1}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=4in]{images/fig_02_002.png}
+			\caption{Diamond}
+			\label{fig_2_2}
+		\end{figure}
+		
+\begin{small}
+\begin{verbatim}
+function output = diamond(n, a, b, x, y, t)
+ %DIAMOND Parametrization of the diamond.
+ %  Parametrization of the diamond from Gray page 31
+  x(t) = a^1 * sqrt(cos(t)^2)^(n - 1) * cos(t);
+  y(t) = b^1 * sqrt(sin(t)^2)^(n - 1) * sin(t);
+  
+  % There is an inconsistent definition of the function.
+  % I believe that the commented definition below is correct.
+  
+  %x(t) = a^n * sqrt(cos(t)^2)^(n - 1) * cos(t);
+  %y(t) = b^n * sqrt(sin(t)^2)^(n - 1) * sin(t);
+  
+  output = [x(t); y(t)];
+end		
+\end{verbatim}		
+\end{small}		
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=4in]{images/fig_02_003.png}
+			\caption{This is a sample graphic}
+			\label{fig_2_3}
+		\end{figure}				
 		
 	\chapter{Curvature}
 		This chapter describes curves in terms of their curvature.
@@ -108,6 +151,18 @@
 		\end{align}
 		
 	\chapter{Surface Examples}
+	
+\begin{small}
+\begin{verbatim}
+function [x, y, z] = hyperbolicparaboloid(u, v)
+  %HYPERBOLICPARABOLOID Simplest model to create a hyperbolic paraboloid
+  % Simplest model to create a hyperbolic paraboloid
+  x = u;
+  y = v;
+  z = u * v;
+end		
+\end{verbatim}		
+\end{small}	
 	
 \begin{small}
 \begin{verbatim}

@@ -35,6 +35,8 @@ subplot(2, 1, 2);
 plot(t_, kappa2_eight_);
 title('Curvature of the figure eight curve');
 
+saveas(f1, "../documentation/images/fig_02_001.png");
+
 % Semicubical parabola on page 23 and 24.
 % Described on page 15 of Gray.
 %clear x y;
@@ -88,6 +90,8 @@ subplot(2, 2, 3);
 plot(t_, kappa2_ellipse_);
 title('Curvature of the ellipse x^2/4+y^2=1');
 
+saveas(f2, "../documentation/images/fig_02_002.png");
+
 t_ = linspace(0, 12 * pi, GRAPH_RESOLUTION);
 
 f3 = figure;
@@ -131,6 +135,8 @@ end
 title('Diamond (1/n, 1, 1.5)');
 axis equal;
 hold off;
+
+saveas(f3, "../documentation/images/fig_02_003.png");
 
 if (DISABLE_WARNINGS)
   warning('on', 'all');
